@@ -15,13 +15,36 @@ read_idx = function(file_name, endian = "big")
   magic_1 = readBin(file, "raw", n = 1, size = 1, endian = endian)
   magic_2 = readBin(file, "raw", n = 1, size = 1, endian = endian)
   if (any(as.character(c(magic_1, magic_2)) != c("00", "00")))
-    error("The magic number doesn't match") 
+    stop("The magic number doesn't match") 
   # Detect the type of data
+  signed = TRUE
   type = as.character(readBin(file, "raw", n = 1, size = 1, endian = endian))
-  if (type %in% c("08", "09")) size = 1
-  else if (type == "08") size = 2
-  else if (type %in% c("0C",  "0D")) size = 4
-  else error("Type byte found is not supported")
+  if (type == "08")
+  { size = 1
+    signed = FALSE
+    what = "integer"
+  }
+  else if (type == "09")
+  { size = 1
+    what = "integer"
+  }
+  else if (type == "0b")
+  { size = 2
+    what = "integer"
+  }
+  else if (type =="0c")
+  { size = 4 
+    what = "integer"
+  }
+   else if (type =="0d")
+  { size = 4 
+    what = "numeric"
+  }
+  else if (type == "0e")
+  { size = 8
+    what = "double"
+  }
+  else stop("Type byte found is not supported")
   # Get the number of dimensions
   number_dim = as.integer(readBin(file, "raw", n = 1, size = 1, endian = endian))
   # Get the actual dimensions
@@ -30,8 +53,8 @@ read_idx = function(file_name, endian = "big")
   { dim[i] = readBin(file, "integer", n = 1, size = 4, endian = endian)
   } 
   # Read the data  
-  data = readBin(file, "integer", n = prod(dim),
-                    size = size, signed = F)
+  data = readBin(file, what, n = prod(dim),
+                    size = size, signed = signed)
   mat = array(data, dim=dim[length(dim):1])
   close(file)
   return(aperm(mat))
