@@ -2,11 +2,16 @@
 #'
 #' This function allows to read an IDX file
 #' 
-#' @usage read_idx(x, file_name) 
+#' @usage read_idx(file_name, endian = "big") 
 #' @param file_name character vector containing the name of
 #'        the file to be read
 #' @param endian wether the file has big or little endian
-#' @rdname write_idx
+#' @rdname read_idx
+#' @examples
+#' m = matrix(1:16, nrow = 4)
+#' file_name = "m.idx"
+#' write_idx(m, file_name)  
+#' mr = read_idx(file_name) 
 #' @export
 
 read_idx = function(file_name, endian = "big")
@@ -48,14 +53,14 @@ read_idx = function(file_name, endian = "big")
   # Get the number of dimensions
   number_dim = as.integer(readBin(file, "raw", n = 1, size = 1, endian = endian))
   # Get the actual dimensions
-  dim = numeric(number_dim)
-  for (i in seq_along(dim))
-  { dim[i] = readBin(file, "integer", n = 1, size = 4, endian = endian)
+  dims = numeric(number_dim)
+  for (i in seq_along(dims))
+  { dims[i] = readBin(file, "integer", n = 1, size = 4, endian = endian)
   } 
-  # Read the data  
-  data = readBin(file, what, n = prod(dim),
-                    size = size, signed = signed)
-  mat = array(data, dim=dim[length(dim):1])
+  # Read the data 
+  n_records = prod(dims)
+  data = readBin(file, what, n = n_records,  size = size, endian = endian)
+  mat = array(data, dim=dims[number_dim:1])
   close(file)
   return(aperm(mat))
 }

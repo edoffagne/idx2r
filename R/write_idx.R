@@ -3,14 +3,19 @@
 #'
 #' This function allows to write an array into an IDX file.
 #' 
-#' @usage write_idx(x, file_name) 
+#' @usage write_idx(x, file_name, endian = "big") 
 #' @param x must be a array or a matrix
 #' @param file_name character vector containing the name of
 #'        the file to be created
+#' @param endian whether the file has big or little endian
 #' @rdname write_idx
+#' @examples
+#' m = matrix(1:16, nrow = 4)
+#' file_name = "m.idx"
+#' write_idx(m, file_name)    
 #' @export
 
-write_idx = function(x, file_name, endian = "Big")
+write_idx = function(x, file_name, endian = "big")
 { file = file(file_name, "wb")
   # Check that the 2 first bytes contain the magic number  
   writeBin(as.raw(0), file, size = 1, endian = endian)
