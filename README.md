@@ -1,4 +1,6 @@
-# Using IDX files in R
+# Using IDX files with R
+
+[![Build Status](https://travis-ci.org/edoffagne/idx2r.svg?branch=master)](https://travis-ci.org/edoffagne/idx2r)
 
 ## Introduction
 
