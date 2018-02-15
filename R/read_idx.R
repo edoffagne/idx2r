@@ -60,7 +60,11 @@ read_idx = function(file_name, endian = "big")
   # Read the data 
   n_records = prod(dims)
   data = readBin(file, what, n = n_records,  size = size, endian = endian)
-  mat = array(data, dim=dims[number_dim:1])
   close(file)
-  return(aperm(mat))
+  if (number_dim == 1) m = data
+  else
+  { m = array(data, dim=dims[number_dim:1])
+    m = aperm(m)
+  }
+  return(m)
 }

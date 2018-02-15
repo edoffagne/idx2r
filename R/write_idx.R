@@ -33,14 +33,15 @@ write_idx = function(x, file_name, endian = "big")
   writeBin(as.raw(type), file,  size = 1, endian = endian)
   # Get the number of dimensions of x
   if (is.array(x)) dim_x = dim(x)
-  else stop("X must be a matrix or an array") 
+  else if (is.vector(x)) dim_x = 1
+  else stop("x must be a vector, a matrix or an array")
   writeBin(as.raw(length(dim_x)), file,  size = 1, endian = endian)
   # Write the actual dimensions
   for (i in dim_x)
   { writeBin(i, file, size = 4, endian = endian)
   }
-  # write the data  
-  x = as.vector(aperm(x))
+  # write the data 
+  if (dim_x > 1) x = as.vector(aperm(x))
   writeBin(x, file, size = size,  endian = endian)
   close(file)
 }
