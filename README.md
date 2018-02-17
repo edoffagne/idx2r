@@ -21,7 +21,7 @@ library(R.utils)
 URL = "http://yann.lecun.com/exdb/mnist/"
 file_name = "train-images-idx3-ubyte.gz"
 download.file(paste0(URL, file_name), "train-images-idx3-ubyte.gz")
-gzip(file_name)
+gunzip(file_name)
 train = read_idx(gsub(pattern = "\\.gz", "", file_name))
 dim(train)
 ```
