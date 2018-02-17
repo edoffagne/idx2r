@@ -10,7 +10,7 @@ read_idx(file_name, endian = "big")
 \item{file_name}{character vector containing the name of
 the file to be read}
 
-\item{endian}{wether the file has "big" or "little" endian}
+\item{endian}{whether the file has "big" or "little" endian}
 }
 \description{
 This function allows to read an IDX file

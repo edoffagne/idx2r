@@ -5,7 +5,7 @@
 #' @usage read_idx(file_name, endian = "big") 
 #' @param file_name character vector containing the name of
 #'        the file to be read
-#' @param endian wether the file has "big" or "little" endian
+#' @param endian whether the file has "big" or "little" endian
 #' @rdname read_idx
 #' @examples
 #' m = matrix(1:16, nrow = 4)
