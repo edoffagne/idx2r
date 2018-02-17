@@ -4,4 +4,6 @@
 * win-builder (devel)
 
 ## R CMD check results
-There were no ERRORs or WARNINGs. 
+There were no ERRORs or WARNINGs.
+
+NOTE: This is a new package. 
