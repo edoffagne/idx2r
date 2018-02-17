@@ -7,7 +7,8 @@
 #' @param x must be a array or a matrix
 #' @param file_name character vector containing the name of
 #'        the file to be created
-#' @param endian whether the file has big or little endian
+#' @param endian whether the file has "big" or "little" endian.
+#' The default is the platform endian.
 #' @rdname write_idx
 #' @examples
 #' m = matrix(1:16, nrow = 4)
@@ -15,7 +16,7 @@
 #' write_idx(m, file_name)    
 #' @export
 
-write_idx = function(x, file_name, endian = "big")
+write_idx = function(x, file_name, endian = .Platform$endian)
 { if (!is.character(file_name)) stop("File_name must be character")
   file = file(file_name, "wb")
   # Check that the 2 first bytes contain the magic number  
@@ -34,7 +35,7 @@ write_idx = function(x, file_name, endian = "big")
   writeBin(as.raw(type), file,  size = 1, endian = endian)
   # Get the number of dimensions of x
   if (is.array(x)) dim_x = dim(x)
-  else if (is.vector(x)) dim_x = 1
+  else if (is.vector(x)) dim_x = 1L
   else stop("x must be a vector, a matrix or an array")
   writeBin(as.raw(length(dim_x)), file,  size = 1, endian = endian)
   # Write the actual dimensions

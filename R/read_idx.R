@@ -2,10 +2,12 @@
 #'
 #' This function allows to read an IDX file
 #' 
-#' @usage read_idx(file_name, endian = "swap") 
+#' @usage read_idx(file_name, endian = .Platform$endian) 
 #' @param file_name character vector containing the name of
 #'        the file to be read
-#' @param endian wether the file has big or little endian
+#' @param endian wether the file has "big" or "little" endian
+#' The default is the platform endian.
+
 #' @rdname read_idx
 #' @examples
 #' m = matrix(1:16, nrow = 4)
@@ -14,7 +16,7 @@
 #' mr = read_idx(file_name) 
 #' @export
 
-read_idx = function(file_name, endian = "swap")
+read_idx = function(file_name, endian = .Platform$endian)
 { if (!is.character(file_name)) stop("File_name must be character")
   file = file(file_name, "rb")
   # Check that the 2 first bytes contain the magic number  
