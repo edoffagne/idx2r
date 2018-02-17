@@ -4,14 +4,13 @@
 \alias{read_idx}
 \title{Read an IDX file}
 \usage{
-read_idx(file_name, endian = .Platform$endian)
+read_idx(file_name, endian = "big")
 }
 \arguments{
 \item{file_name}{character vector containing the name of
 the file to be read}
 
-\item{endian}{wether the file has "big" or "little" endian
-The default is the platform endian.}
+\item{endian}{wether the file has "big" or "little" endian}
 }
 \description{
 This function allows to read an IDX file

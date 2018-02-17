@@ -12,8 +12,7 @@ write_idx(x, file_name, endian = "big")
 \item{file_name}{character vector containing the name of
 the file to be created}
 
-\item{endian}{whether the file has "big" or "little" endian.
-The default is the platform endian.}
+\item{endian}{whether the file has "big" or "little" endian.}
 }
 \description{
 This function allows to write an array into an IDX file.
