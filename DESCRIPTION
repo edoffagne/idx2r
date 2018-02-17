@@ -1,6 +1,6 @@
 Package: idx2r
 Type: Package
-Title: This Package Provides Functions to Convert Files to and from IDX format to Arrays in R
+Title: This Package Provides Functions to Convert Files to and from IDX Format to Arrays in R
 Version: 1.0.0
 Date: 2018-02-10
 Author: Erik Doffagne
