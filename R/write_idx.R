@@ -16,7 +16,8 @@
 #' @export
 
 write_idx = function(x, file_name, endian = "big")
-{ file = file(file_name, "wb")
+{ if (!is.character(file_name)) stop("File_name must be character")
+  file = file(file_name, "wb")
   # Check that the 2 first bytes contain the magic number  
   writeBin(as.raw(0), file, size = 1, endian = endian)
   writeBin(as.raw(0), file, size = 1, endian = endian)
@@ -41,7 +42,7 @@ write_idx = function(x, file_name, endian = "big")
   { writeBin(i, file, size = 4, endian = endian)
   }
   # write the data 
-  if (dim_x > 1) x = as.vector(aperm(x))
+  if (length(dim_x) > 1) x = as.vector(aperm(x))
   writeBin(x, file, size = size,  endian = endian)
   close(file)
 }

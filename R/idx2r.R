@@ -1,4 +1,4 @@
-#' This Package Provides Functions to Convert Files to and from IDX format 
+#' This Package Provides Functions to Convert Files to and from IDX Format 
 #' to Vectors, Matrices and Array in R
 #'
 #' This package provides functions to convert files to

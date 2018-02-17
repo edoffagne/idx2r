@@ -14,8 +14,9 @@
 #' mr = read_idx(file_name) 
 #' @export
 
-read_idx = function(file_name, endian = "big")
-{ file = file(file_name, "rb")
+read_idx = function(file_name, endian = "swap")
+{ if (!is.character(file_name)) stop("File_name must be character")
+  file = file(file_name, "rb")
   # Check that the 2 first bytes contain the magic number  
   magic_1 = readBin(file, "raw", n = 1, size = 1, endian = endian)
   magic_2 = readBin(file, "raw", n = 1, size = 1, endian = endian)

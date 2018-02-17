@@ -4,7 +4,7 @@
 \name{idx2r-package}
 \alias{idx2r}
 \alias{idx2r-package}
-\title{This Package Provides Functions to Convert Files to and from IDX format 
+\title{This Package Provides Functions to Convert Files to and from IDX Format 
 to Vectors, Matrices and Array in R}
 \description{
 This package provides functions to convert files to
