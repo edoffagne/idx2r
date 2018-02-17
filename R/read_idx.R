@@ -2,7 +2,7 @@
 #'
 #' This function allows to read an IDX file
 #' 
-#' @usage read_idx(file_name, endian = "big") 
+#' @usage read_idx(file_name, endian = "swap") 
 #' @param file_name character vector containing the name of
 #'        the file to be read
 #' @param endian wether the file has big or little endian

@@ -4,7 +4,7 @@
 \alias{read_idx}
 \title{Read an IDX file}
 \usage{
-read_idx(file_name, endian = "big")
+read_idx(file_name, endian = "swap")
 }
 \arguments{
 \item{file_name}{character vector containing the name of
