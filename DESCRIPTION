@@ -8,5 +8,6 @@ Maintainer: Erik Doffagne <erik.doffagne@gmail.com>
 Description: Convert files to and from IDX format to vectors, matrices and arrays in R.
     The file format is described on the website from Yann LeCun <http://yann.lecun.com/exdb/mnist/>.
 License: MIT + file LICENSE
+URL: https://github.com/edoffagne/idx2r
 Suggests: testthat
 RoxygenNote: 6.0.1
