@@ -5,7 +5,7 @@
 \alias{idx2r}
 \alias{idx2r-package}
 \title{Convert Files to and from IDX Format 
-to Vectors, Matrices and Array in R}
+to Vectors, Matrices and Arrays in R}
 \description{
 Convert files to and from IDX format to arrays in R. IDX is a format
 to store vector and arrays in binary format.
