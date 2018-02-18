@@ -1,8 +1,7 @@
-#' This Package Provides Functions to Convert Files to and from IDX Format 
+#' Convert Files to and from IDX Format 
 #' to Vectors, Matrices and Array in R
 #'
-#' This package provides functions to convert files to
-#' and from IDX format to arrays in R. IDX is a format
+#' Convert files to and from IDX format to arrays in R. IDX is a format
 #' to store vector and arrays in binary format.
 #' Reading IDX format is needed for instance to use 
 #' the MNIST database of handwritten digits from 
