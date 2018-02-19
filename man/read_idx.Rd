@@ -17,7 +17,7 @@ This function allows to read an IDX file
 }
 \examples{
 m = matrix(1:16, nrow = 4)
-file_name = "m.idx"
+file.path(tempdir(),"m.idx")
 write_idx(m, file_name)  
 mr = read_idx(file_name) 
 }
