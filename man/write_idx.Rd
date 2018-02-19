@@ -19,6 +19,6 @@ This function allows to write an array into an IDX file.
 }
 \examples{
 m = matrix(1:16, nrow = 4)
-file.path(tempdir(),"m.idx")
+file_name = file.path(tempdir(),"m.idx")
 write_idx(m, file_name)    
 }
