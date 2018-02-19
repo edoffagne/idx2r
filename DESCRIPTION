@@ -1,12 +1,14 @@
 Package: idx2r
 Type: Package
-Title: Convert Files to and from IDX Format to Vectors, Matrices and Arrays in R
+Title: Convert Files to and from IDX Format to Vectors, Matrices and Arrays
 Version: 1.0.0
-Date: 2018-02-18
+Date: 2018-02-19
 Author: Erik Doffagne
 Maintainer: Erik Doffagne <erik.doffagne@gmail.com> 
-Description: Convert files to and from IDX format to vectors, matrices and arrays in R.
-    The file format is described on the website from Yann LeCun <http://yann.lecun.com/exdb/mnist/>.
+Description: Convert files to and from IDX format to vectors, matrices and arrays.
+    IDX is a very simple file format designed for storing vectors and multidimensional matrices in
+    binary format. The format is described on the website from Yann LeCun
+    <http://yann.lecun.com/exdb/mnist/>. 
 License: MIT + file LICENSE
 URL: https://github.com/edoffagne/idx2r
 Suggests: testthat
