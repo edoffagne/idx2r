@@ -30,9 +30,17 @@ dim(train)
 
 The package can be installed from GitHub with the following command:
 
- ```shell
+```shell
 $ R -e "devtools::install_github('edoffagne/idx2r')"
 ```
+
+The package can also be installed from a CRAN repository from an
+R session:
+
+```shell
+> install.packages("idx2r")
+```
+
 
 
 
