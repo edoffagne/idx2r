@@ -41,5 +41,5 @@ devtools::install_github("edoffagne/idx2r")
 The package can also be installed from a CRAN repository:
 
 ``` r
-> install.packages("idx2r")
+install.packages("idx2r")
 ```
